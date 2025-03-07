@@ -8,7 +8,7 @@ fi
 read -p "Enter path for result file: " pathresult
 mkdir -p  "$pathresult"
 name_file=$pathresult/$(basename $pathcheck)-"md5-sum.txt"
-echo "File with result - $name_file"
+
 for var in  "$pathcheck"/*
   do
     if [ -f "$var" ];
@@ -17,3 +17,4 @@ for var in  "$pathcheck"/*
 	  md5sum "$var" >> "$name_file"
     fi
   done
+  echo "File with result - $name_file"
